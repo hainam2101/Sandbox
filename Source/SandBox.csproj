@@ -263,6 +263,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>copy ..\External\TV3D\msvcr71.dll $(OutDir)
-copy ..\External\ScintillaNet\SciLexer.dll $(OutDir)</PostBuildEvent>
+copy ..\External\ScintillaNet\SciLexer.dll $(OutDir)
+copy ..\External\irrKlang\ikpMP3.dll $(OutDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>
