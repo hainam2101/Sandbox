@@ -1264,7 +1264,7 @@ namespace Sandbox
         {
             var openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Helpers.PATH_SCENES);
-            openFileDialog.Filter = "Sandbox files (*.xml)|*.xml|Sandbox files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog.Filter = "Sandbox files (*.xml, *.json)|*.xml;*.json|All files (*.*)|*.*";
             openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
 
@@ -1388,7 +1388,7 @@ namespace Sandbox
             {
                 var saveFileDialog = new SaveFileDialog();
                 saveFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Helpers.PATH_SCENES);
-                saveFileDialog.Filter = "Sandbox files (*.xml)|*.xml|Sandbox files (*.json)|*.json|All files (*.*)|*.*";
+                saveFileDialog.Filter = "Sandbox files (*.xml, *.json)|*.xml;*.json|All files (*.*)|*.*";
                 saveFileDialog.FilterIndex = 1;
                 saveFileDialog.RestoreDirectory = true;
 

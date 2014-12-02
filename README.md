@@ -1,7 +1,7 @@
-Sandbox
-=======
+Sandbox (old project)
+=====================
 
-3D scene editor suitable to create game levels. This tool allows you to create scenes and save them to XML format.
+3D scene editor suitable to create game levels. This tool allows you to create scenes and save them to XML or JSON format.
 
 Compiled version
 ----------------
