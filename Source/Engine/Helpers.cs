@@ -70,7 +70,7 @@ namespace Engine
 
         #region Constans
         public const string PROGRAM_NAME = "Sandbox";
-        public const string PROGRAM_VERSION = "0.3.3";
+        public const string PROGRAM_VERSION = "0.3.4";
         #endregion
 
         #region Private methods.

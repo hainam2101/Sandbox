@@ -9,6 +9,7 @@ using Sandbox;
 using System.Xml.Linq;
 using System.Linq;
 using System.Collections;
+using Newtonsoft.Json;
 
 namespace Engine
 {
@@ -27,6 +28,12 @@ namespace Engine
         {
             public bool Enabled;
             public string Script;
+        }
+
+        enum FileFormat
+        {
+            XML,
+            JSON
         }
 
         public Core(IntPtr handle, ProgramSettings settings)
@@ -525,6 +532,8 @@ namespace Engine
 
         public void SaveScene(string fileName)
         {
+            var fileFormat = fileName.ToLower().EndsWith("json") ? FileFormat.JSON : FileFormat.XML;
+
             try
             {
                 var xmlDoc = new XmlDocument();
@@ -1030,8 +1039,16 @@ namespace Engine
                 editorNode.AppendChild(camLookAtNode);
                 camLookAtNode.AppendChild(camLookAtValue);
 
-                // Save to the XML file
-                xmlDoc.Save(fileName);
+                switch (fileFormat)
+                {
+                    case FileFormat.XML:
+                        xmlDoc.Save(fileName);
+                        break;
+                    case FileFormat.JSON:
+                        var jsonString = JsonConvert.SerializeXmlNode(xmlDoc);
+                        File.WriteAllText(fileName, jsonString);
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -1085,13 +1102,24 @@ namespace Engine
 
         public void LoadScene(string fileName)
         {
+            var fileFormat = fileName.ToLower().EndsWith("json") ? FileFormat.JSON : FileFormat.XML;
             LoadingScene = true;
+
             try
             {
                 ResetErrorMessages();
 
                 var xmlDoc = new XmlDocument();
-                xmlDoc.Load(fileName);
+
+                switch (fileFormat)
+                {
+                    case FileFormat.XML:
+                        xmlDoc.Load(fileName);
+                        break;
+                    case FileFormat.JSON:
+                        xmlDoc = JsonConvert.DeserializeXmlNode(File.ReadAllText(fileName));
+                        break;
+                }
 
                 int pozId = 0;
                 foreach (XmlNode objectNode in xmlDoc.DocumentElement.SelectNodes("/Scene/Objects/*"))
