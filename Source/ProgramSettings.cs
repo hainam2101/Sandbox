@@ -20,7 +20,7 @@ namespace Sandbox
             CameraMouseSpeed = 0.05f;
             CameraRunSpeed = 3f;
             CameraScrollSpeed = 0.05f;
-            SnapToGrid = false;
+            SnapToGrid = true;
             SnapValue = 1f;
             UseAdvanceTexturing = true;
             TextureNormalSuffix = "_n";
@@ -28,17 +28,17 @@ namespace Sandbox
             TextureHeightSuffix = "_h";
             Antialiasing = _Antialiasing.None;
             VSync = true;
-            RotationValue = 45.0f;
+            RotationValue = 5.0f;
             BackColor = new MyColor(Color.LightGray.R, Color.LightGray.G, Color.LightGray.B);
             Script = string.Empty;
             ScriptFileExtension = string.Empty;
             Shadows = false;
             ScriptLanguage = Lexer.Lua;
             FolderBase = "assets";
-            FolderModels = "assets/models";
-            FolderTextures = "assets/textures";
-            FolderSounds = "assets/sounds";
-            FolderLevels = "assets/levels";
+            FolderModels = "assets\\models";
+            FolderTextures = "assets\\textures";
+            FolderSounds = "assets\\sounds";
+            FolderLevels = "assets\\levels";
         }
 
         [Category("Rendering")]
