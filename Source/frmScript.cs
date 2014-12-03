@@ -38,7 +38,7 @@ namespace Sandbox
 
         private void frmScript_Load(object sender, EventArgs e)
         {
-            var settings = Helpers.LaodSettings(ProductName);
+            var settings = Helpers.LoadSettings();
             language = settings.ScriptLanguage.ToString().ToLower();
             script.ConfigurationManager.Language = language;
             script.ConfigurationManager.Configure();

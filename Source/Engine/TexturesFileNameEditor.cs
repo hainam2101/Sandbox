@@ -9,13 +9,13 @@ namespace Sandbox
     {
         protected override void InitializeDialog(System.Windows.Forms.OpenFileDialog openFileDialog)
         {
-            string path = Helpers.PATH_TEXTURES;
+            var settings = Helpers.LoadSettings();
 
-            if (!String.IsNullOrEmpty(path))
+            if (!String.IsNullOrEmpty(settings.FolderTextures))
             {
-                if(Directory.Exists(Path.Combine(Application.StartupPath, path)))
+                if (Directory.Exists(Path.Combine(Application.StartupPath, settings.FolderTextures)))
                 {
-                    openFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, path);
+                    openFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, settings.FolderTextures);
                 }
             }
 

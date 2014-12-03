@@ -81,11 +81,12 @@ namespace Engine
         /// <param name="projectPath">The project path.</param>
         public static void CreateDataPaths(string projectPath)
         {
-            CreateDirectory(PATH_DATA);
-            CreateDirectory(PATH_OBJECTS);
-            CreateDirectory(PATH_TEXTURES);
-            CreateDirectory(PATH_SOUNDS);
-            CreateDirectory(PATH_SCENES);
+            var settings = LoadSettings();
+            CreateDirectory(settings.FolderBase);
+            CreateDirectory(settings.FolderLevels);
+            CreateDirectory(settings.FolderModels);
+            CreateDirectory(settings.FolderSounds);
+            CreateDirectory(settings.FolderTextures);
         }
 
         #endregion
@@ -361,12 +362,6 @@ namespace Engine
         private const string COMMON_OBECT_PARTICLE = "PARTICLE";
         // Textures.
         private const string TEXTURE_FROM_MEMORY = "##MEMORY";
-        // Paths.
-        public const string PATH_DATA = "Data";
-        public const string PATH_OBJECTS = "Data\\Objects";
-        public const string PATH_SCENES = "Data\\Scenes";
-        public const string PATH_SOUNDS = "Data\\Sounds";
-        public const string PATH_TEXTURES = "Data\\Textures";
         // Resources.
         public const string TEXTURE_BLANK = "blank";
         // Sun.
@@ -381,27 +376,9 @@ namespace Engine
             None
         }
 
-        public static void SaveSettings(ProgramSettings settings, string productName)
+        public static ProgramSettings LoadSettings()
         {
-            try
-            {
-                string settingsFile = Path.Combine(Application.StartupPath, string.Format("{0}{1}", productName, ".xml"));
-                using (var fs = new FileStream(settingsFile, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
-                {
-                    var xs = new XmlSerializer(typeof(ProgramSettings));
-                    xs.Serialize(fs, settings);
-                    fs.Close();
-                }
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public static ProgramSettings LaodSettings(string productName)
-        {
-            string settingsFile = Path.Combine(Application.StartupPath, string.Format("{0}{1}", productName, ".xml"));
+            string settingsFile = Path.Combine(Application.StartupPath, "settings.xml");
             if (File.Exists(settingsFile))
             {
                 try
@@ -423,6 +400,35 @@ namespace Engine
             {
                 return new ProgramSettings();
             }
+        }
+
+        public static void SaveSettings(ProgramSettings settings)
+        {
+            try
+            {
+                string settingsFile = Path.Combine(Application.StartupPath, "settings.xml");
+                using (var fs = new FileStream(settingsFile, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
+                {
+                    var xs = new XmlSerializer(typeof(ProgramSettings));
+                    xs.Serialize(fs, settings);
+                    fs.Close();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static string FirstLetterToUpper(string str)
+        {
+            if (str == null)
+                return null;
+
+            if (str.Length > 1)
+                return char.ToUpper(str[0]) + str.Substring(1);
+
+            return str.ToUpper();
         }
     }
 }

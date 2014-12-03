@@ -34,6 +34,11 @@ namespace Sandbox
             ScriptFileExtension = string.Empty;
             Shadows = false;
             ScriptLanguage = Lexer.Lua;
+            FolderBase = "assets";
+            FolderModels = "assets/models";
+            FolderTextures = "assets/textures";
+            FolderSounds = "assets/sounds";
+            FolderLevels = "assets/levels";
         }
 
         [Category("Rendering")]
@@ -149,5 +154,25 @@ namespace Sandbox
         [Category("Script"), DisplayName("Script file extension")]
         [Description("Defines what script files must be visible in object tree. Enter file extension.")]
         public string ScriptFileExtension { get; set; }
+
+        [Category("Folders"), DisplayName("Base")]
+        [Description("Defines base assets project folder.")]
+        public string FolderBase { get; set; }
+
+        [Category("Folders"), DisplayName("Models")]
+        [Description("Defines models folder.")]
+        public string FolderModels { get; set; }
+
+        [Category("Folders"), DisplayName("Textures")]
+        [Description("Defines textures folder.")]
+        public string FolderTextures { get; set; }
+
+        [Category("Folders"), DisplayName("Sounds")]
+        [Description("Defines sounds folder.")]
+        public string FolderSounds { get; set; }
+
+        [Category("Folders"), DisplayName("Levels")]
+        [Description("Defines levels folder.")]
+        public string FolderLevels { get; set; }
     }
 }

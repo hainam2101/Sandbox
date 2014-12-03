@@ -84,7 +84,7 @@ namespace Engine
 #else
             Engine.SetDebugMode(false, false, false, false);
 #endif
-            Engine.SetSearchDirectory(Path.Combine(Application.StartupPath, Helpers.PATH_DATA));
+            Engine.SetSearchDirectory(Path.Combine(Application.StartupPath, settings.FolderBase));
             Engine.Init3DWindowed(handle, true);
             Engine.GetViewport().SetAutoResize(true);
             Engine.DisplayFPS(false);

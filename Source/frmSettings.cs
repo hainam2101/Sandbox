@@ -38,7 +38,7 @@ namespace Sandbox
         private void btnOK_Click(object sender, EventArgs e)
         {
             OKPressed = true;
-            Helpers.SaveSettings(settings, ProductName);
+            Helpers.SaveSettings(settings);
             Close();
         }
 

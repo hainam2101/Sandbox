@@ -54,51 +54,7 @@ namespace Sandbox
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             doLoop = false;
-            SaveSettings(Settings);
-        }
-
-        private ProgramSettings LaodSettings()
-        {
-            string settingsFile = Path.Combine(Application.StartupPath, string.Format("{0}{1}", ProductName, ".xml"));
-            if (File.Exists(settingsFile))
-            {
-                try
-                {
-                    using (var fs = new FileStream(settingsFile, FileMode.Open))
-                    {
-                        var xs = new XmlSerializer(typeof(ProgramSettings));
-                        var settings = (ProgramSettings)xs.Deserialize(fs);
-                        fs.Close();
-                        return settings;
-                    }
-                }
-                catch (Exception)
-                {
-                    return new ProgramSettings();
-                }
-            }
-            else
-            {
-                return new ProgramSettings();
-            }
-        }
-
-        private void SaveSettings(ProgramSettings settings)
-        {
-            try
-            {
-                string settingsFile = Path.Combine(Application.StartupPath, string.Format("{0}{1}", ProductName, ".xml"));
-                using (var fs = new FileStream(settingsFile, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
-                {
-                    var xs = new XmlSerializer(typeof(ProgramSettings));
-                    xs.Serialize(fs, settings);
-                    fs.Close();
-                }
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            Helpers.SaveSettings(Settings);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -107,8 +63,8 @@ namespace Sandbox
             this.Text = string.Format("{0} {1}", Helpers.PROGRAM_NAME, Helpers.PROGRAM_VERSION);
             Helpers.CreateDataPaths(Application.StartupPath);
 
-            Settings = LaodSettings();
-            LoadObjectInObjectsTreeView(Path.Combine(Application.StartupPath, Helpers.PATH_DATA));
+            Settings = Helpers.LoadSettings();
+            LoadObjectInObjectsTreeView(Path.Combine(Application.StartupPath, Settings.FolderBase));
             InitialiseSceneTreeView();
 
             core = new Core(pnlRenderer.Handle, Settings);
@@ -162,10 +118,10 @@ namespace Sandbox
             //spotNode.ImageIndex = 1;
             //spotNode.SelectedImageIndex = 1;
             // Landscape
-            var landscapeBaseNode = new TreeNode("Landscape");
-            var landscapeNode = new TreeNode("Landscape");
-            landscapeNode.ImageIndex = 9;
-            landscapeNode.SelectedImageIndex = 9;
+            //var landscapeBaseNode = new TreeNode("Landscape");
+            //var landscapeNode = new TreeNode("Landscape");
+            //landscapeNode.ImageIndex = 9;
+            //landscapeNode.SelectedImageIndex = 9;
             // Trigger
             var triggerBaseNode = new TreeNode("Trigger");
             var triggerNode = new TreeNode("Trigger");
@@ -178,12 +134,12 @@ namespace Sandbox
             lightsNode.Nodes.Add(directionalNode);
             lightsNode.Nodes.Add(pointNode);
             //lightsNode.Nodes.Add(spotNode);
-            landscapeBaseNode.Nodes.Add(landscapeNode);
+            //landscapeBaseNode.Nodes.Add(landscapeNode);
             triggerBaseNode.Nodes.Add(triggerNode);
             node.Nodes.Add(skyNode);
             node.Nodes.Add(waterBaseNode);
             node.Nodes.Add(lightsNode);
-            node.Nodes.Add(landscapeBaseNode);
+            //node.Nodes.Add(landscapeBaseNode);
             node.Nodes.Add(triggerBaseNode);
             tvObjects.Nodes.Add(node);
 
@@ -202,7 +158,7 @@ namespace Sandbox
             sceneLightsNode = new TreeNode("Lights");
             sceneSoundsNode = new TreeNode("Sounds");
             sceneWaterNode = new TreeNode("Water");
-            sceneLandscapeNode = new TreeNode("Landscape");
+            //sceneLandscapeNode = new TreeNode("Landscape");
             sceneTriggersNode = new TreeNode("Triggers");
             sceneParticlesNode = new TreeNode("Particles");
 
@@ -211,7 +167,7 @@ namespace Sandbox
             tvSceneObjects.Nodes.Add(sceneLightsNode);
             tvSceneObjects.Nodes.Add(sceneSoundsNode);
             tvSceneObjects.Nodes.Add(sceneWaterNode);
-            tvSceneObjects.Nodes.Add(sceneLandscapeNode);
+            //tvSceneObjects.Nodes.Add(sceneLandscapeNode);
             tvSceneObjects.Nodes.Add(sceneTriggersNode);
             tvSceneObjects.Nodes.Add(sceneParticlesNode);
         }
@@ -252,7 +208,7 @@ namespace Sandbox
         {
             var dirInfo = new DirectoryInfo(root);
             var node = new TreeNode();
-            node.Text = nodeText;
+            node.Text = Helpers.FirstLetterToUpper(nodeText);
             GetFolders(dirInfo, node);
             treeName.Nodes.Add(node);
             treeName.Nodes[1].Expand();
@@ -276,7 +232,7 @@ namespace Sandbox
                         }
                         else
                         {
-                            treeNode = node.Nodes.Add(string.Empty, driSub.Name, 0);
+                            treeNode = node.Nodes.Add(string.Empty, Helpers.FirstLetterToUpper(driSub.Name), 0);
                             GetFiles(driSub, treeNode);
                             GetFolders(driSub, treeNode);
                         }
@@ -1014,7 +970,7 @@ namespace Sandbox
 
         private void btnRefreshObjList_Click(object sender, EventArgs e)
         {
-            LoadObjectInObjectsTreeView(Path.Combine(Application.StartupPath, Helpers.PATH_DATA));
+            LoadObjectInObjectsTreeView(Path.Combine(Application.StartupPath, Settings.FolderBase));
         }
 
         private void pnlRenderer_MouseLeave(object sender, EventArgs e)
@@ -1263,7 +1219,7 @@ namespace Sandbox
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Helpers.PATH_SCENES);
+            openFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Settings.FolderLevels.Replace("/", "\\"));
             openFileDialog.Filter = "Sandbox files (*.xml, *.json)|*.xml;*.json|All files (*.*)|*.*";
             openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
@@ -1387,7 +1343,7 @@ namespace Sandbox
             if (saveMode == SaveMode.SaveAs)
             {
                 var saveFileDialog = new SaveFileDialog();
-                saveFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Helpers.PATH_SCENES);
+                saveFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Settings.FolderLevels.Replace("/", "\\"));
                 saveFileDialog.Filter = "Sandbox files (*.xml, *.json)|*.xml;*.json|All files (*.*)|*.*";
                 saveFileDialog.FilterIndex = 1;
                 saveFileDialog.RestoreDirectory = true;
@@ -1516,7 +1472,7 @@ namespace Sandbox
             Cursor = Cursors.WaitCursor;
 
             var saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Helpers.PATH_OBJECTS);
+            saveFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, Settings.FolderModels);
             saveFileDialog.Filter = "X files (*.x)|*.x|All files (*.*)|*.*";
             saveFileDialog.FilterIndex = 1;
             saveFileDialog.RestoreDirectory = true;
