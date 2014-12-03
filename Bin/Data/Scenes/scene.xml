@@ -2,288 +2,36 @@
 <Scene>
   <Objects>
     <Object>
-      <Name>Mesh1</Name>
-      <FileName>Data\Objects\plane\plane.x</FileName>
+      <Name>Mesh10</Name>
+      <FileName>Data\Objects\sphere\sphere.tvm</FileName>
       <IsAnimated>false</IsAnimated>
       <CustomTexture>
       </CustomTexture>
       <ScaleTexture>1 1</ScaleTexture>
       <Visible>true</Visible>
-      <Position>0 0 0</Position>
+      <Position>-1.874626 2.707008 -4.941381</Position>
       <Rotation>0 0 0</Rotation>
       <Scale>1 1 1</Scale>
       <Lightning>true</Lightning>
-      <Mass>0</Mass>
-      <Bounding>Box</Bounding>
+      <Mass>5</Mass>
+      <Bounding>Sphere</Bounding>
       <StaticFriction>0.9</StaticFriction>
       <KineticFriction>0.5</KineticFriction>
       <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
+      <Bounciness>0.5</Bounciness>
       <CustomParameters>
       </CustomParameters>
       <CustomScript>
         <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh1_Init()
+        <Script><![CDATA[function Mesh10_Init()
   
 end
 
-function Mesh1_Update()
+function Mesh10_Update()
   
 end
 
-function Mesh1_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh2</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>0.06930351 2.315022 -2.974226</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh2_Init()
-  
-end
-
-function Mesh2_Update()
-  
-end
-
-function Mesh2_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh3</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>-0.4627571 5.297023 -3.954369</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh3_Init()
-  
-end
-
-function Mesh3_Update()
-  
-end
-
-function Mesh3_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh4</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>-0.0500927 8.174026 -3.494295</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh4_Init()
-  
-end
-
-function Mesh4_Update()
-  
-end
-
-function Mesh4_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh5</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>-0.4627571 10.72202 -3.954369</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh5_Init()
-  
-end
-
-function Mesh5_Update()
-  
-end
-
-function Mesh5_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh6</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>-1.350216 13.36801 -2.961796</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh6_Init()
-  
-end
-
-function Mesh6_Update()
-  
-end
-
-function Mesh6_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh7</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>-0.4627571 16.39201 -3.954369</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh7_Init()
-  
-end
-
-function Mesh7_Update()
-  
-end
-
-function Mesh7_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Object>
-    <Object>
-      <Name>Mesh8</Name>
-      <FileName>Data\Objects\box\box.tvm</FileName>
-      <IsAnimated>false</IsAnimated>
-      <CustomTexture>
-      </CustomTexture>
-      <ScaleTexture>1 1</ScaleTexture>
-      <Visible>true</Visible>
-      <Position>-0.4627571 18.98901 -3.954369</Position>
-      <Rotation>0 0 0</Rotation>
-      <Scale>1 1 1</Scale>
-      <Lightning>true</Lightning>
-      <Mass>10</Mass>
-      <Bounding>Box</Bounding>
-      <StaticFriction>0.9</StaticFriction>
-      <KineticFriction>0.5</KineticFriction>
-      <Softness>0.1</Softness>
-      <Bounciness>0.1</Bounciness>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh8_Init()
-  
-end
-
-function Mesh8_Update()
-  
-end
-
-function Mesh8_Draw()
+function Mesh10_Draw()
   
 end
 ]]></Script>
@@ -326,36 +74,288 @@ end
       </CustomScript>
     </Object>
     <Object>
-      <Name>Mesh10</Name>
-      <FileName>Data\Objects\sphere\sphere.tvm</FileName>
+      <Name>Mesh8</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
       <IsAnimated>false</IsAnimated>
       <CustomTexture>
       </CustomTexture>
       <ScaleTexture>1 1</ScaleTexture>
       <Visible>true</Visible>
-      <Position>-1.874626 2.707008 -4.941381</Position>
+      <Position>-0.4627571 18.98901 -3.954369</Position>
       <Rotation>0 0 0</Rotation>
       <Scale>1 1 1</Scale>
       <Lightning>true</Lightning>
-      <Mass>5</Mass>
-      <Bounding>Sphere</Bounding>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
       <StaticFriction>0.9</StaticFriction>
       <KineticFriction>0.5</KineticFriction>
       <Softness>0.1</Softness>
-      <Bounciness>0.5</Bounciness>
+      <Bounciness>0.1</Bounciness>
       <CustomParameters>
       </CustomParameters>
       <CustomScript>
         <Enabled>false</Enabled>
-        <Script><![CDATA[function Mesh10_Init()
+        <Script><![CDATA[function Mesh8_Init()
   
 end
 
-function Mesh10_Update()
+function Mesh8_Update()
   
 end
 
-function Mesh10_Draw()
+function Mesh8_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh7</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>-0.4627571 16.39201 -3.954369</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh7_Init()
+  
+end
+
+function Mesh7_Update()
+  
+end
+
+function Mesh7_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh6</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>-1.350216 13.36801 -2.961796</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh6_Init()
+  
+end
+
+function Mesh6_Update()
+  
+end
+
+function Mesh6_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh5</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>-0.4627571 10.72202 -3.954369</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh5_Init()
+  
+end
+
+function Mesh5_Update()
+  
+end
+
+function Mesh5_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh4</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>-0.0500927 8.174026 -3.494295</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh4_Init()
+  
+end
+
+function Mesh4_Update()
+  
+end
+
+function Mesh4_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh3</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>-0.4627571 5.297023 -3.954369</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh3_Init()
+  
+end
+
+function Mesh3_Update()
+  
+end
+
+function Mesh3_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh2</Name>
+      <FileName>Data\Objects\box\box.tvm</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>0.06930351 2.315022 -2.974226</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>10</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh2_Init()
+  
+end
+
+function Mesh2_Update()
+  
+end
+
+function Mesh2_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Object>
+    <Object>
+      <Name>Mesh1</Name>
+      <FileName>Data\Objects\plane\plane.x</FileName>
+      <IsAnimated>false</IsAnimated>
+      <CustomTexture>
+      </CustomTexture>
+      <ScaleTexture>1 1</ScaleTexture>
+      <Visible>true</Visible>
+      <Position>0 0 0</Position>
+      <Rotation>0 0 0</Rotation>
+      <Scale>1 1 1</Scale>
+      <Lightning>true</Lightning>
+      <Mass>0</Mass>
+      <Bounding>Box</Bounding>
+      <StaticFriction>0.9</StaticFriction>
+      <KineticFriction>0.5</KineticFriction>
+      <Softness>0.1</Softness>
+      <Bounciness>0.1</Bounciness>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Mesh1_Init()
+  
+end
+
+function Mesh1_Update()
+  
+end
+
+function Mesh1_Draw()
   
 end
 ]]></Script>
@@ -390,7 +390,7 @@ end
     <Directional>
       <Name>DirectionalLight</Name>
       <Visible>true</Visible>
-      <Position comment="Position value used in editor.">-44.6346 13 26.50626</Position>
+      <Position>-44.6346 13 26.50626</Position>
       <Direction>0.8340615 -0.2429236 -0.4953074</Direction>
       <Color>255 255 128</Color>
       <CustomParameters>
@@ -436,32 +436,6 @@ end
   </Triggers>
   <Sounds>
     <Sound>
-      <Name>Sound2</Name>
-      <FileName>Data\Sounds\broken_fan.wav</FileName>
-      <Position>1.977137 8.312808 -11.44893</Position>
-      <Volume>1</Volume>
-      <Stopped>false</Stopped>
-      <Loop>false</Loop>
-      <Is3D>true</Is3D>
-      <CustomParameters>
-      </CustomParameters>
-      <CustomScript>
-        <Enabled>false</Enabled>
-        <Script><![CDATA[function Sound2_Init()
-  
-end
-
-function Sound2_Update()
-  
-end
-
-function Sound2_Draw()
-  
-end
-]]></Script>
-      </CustomScript>
-    </Sound>
-    <Sound>
       <Name>Sound3</Name>
       <FileName>Data\Sounds\broken_fan.wav</FileName>
       <Position>14.16196 16.80476 -13.03785</Position>
@@ -482,6 +456,32 @@ function Sound3_Update()
 end
 
 function Sound3_Draw()
+  
+end
+]]></Script>
+      </CustomScript>
+    </Sound>
+    <Sound>
+      <Name>Sound2</Name>
+      <FileName>Data\Sounds\broken_fan.wav</FileName>
+      <Position>1.977137 8.312808 -11.44893</Position>
+      <Volume>1</Volume>
+      <Stopped>false</Stopped>
+      <Loop>false</Loop>
+      <Is3D>true</Is3D>
+      <CustomParameters>
+      </CustomParameters>
+      <CustomScript>
+        <Enabled>false</Enabled>
+        <Script><![CDATA[function Sound2_Init()
+  
+end
+
+function Sound2_Update()
+  
+end
+
+function Sound2_Draw()
   
 end
 ]]></Script>

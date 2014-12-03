@@ -208,7 +208,8 @@ namespace Sandbox
         {
             var dirInfo = new DirectoryInfo(root);
             var node = new TreeNode();
-            node.Text = Helpers.FirstLetterToUpper(nodeText);
+            //node.Text = Helpers.FirstLetterToUpper(nodeText);
+            node.Text = nodeText;
             GetFolders(dirInfo, node);
             treeName.Nodes.Add(node);
             treeName.Nodes[1].Expand();
@@ -232,7 +233,8 @@ namespace Sandbox
                         }
                         else
                         {
-                            treeNode = node.Nodes.Add(string.Empty, Helpers.FirstLetterToUpper(driSub.Name), 0);
+                            //treeNode = node.Nodes.Add(string.Empty, Helpers.FirstLetterToUpper(driSub.Name), 0);
+                            treeNode = node.Nodes.Add(string.Empty, driSub.Name, 0);
                             GetFiles(driSub, treeNode);
                             GetFolders(driSub, treeNode);
                         }

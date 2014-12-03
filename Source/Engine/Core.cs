@@ -657,7 +657,7 @@ namespace Engine
                     var nameNode = xmlDoc.CreateElement("Name");
                     var visibleNode = xmlDoc.CreateElement("Visible");
                     var positionNode = xmlDoc.CreateElement("Position");
-                    positionNode.SetAttribute("comment", "Position value used in editor.");
+                    //positionNode.SetAttribute("comment", "Position value used in editor.");
                     var directionNode = xmlDoc.CreateElement("Direction");
                     var colorNode = xmlDoc.CreateElement("Color");
 
